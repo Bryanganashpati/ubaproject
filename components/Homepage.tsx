@@ -103,8 +103,9 @@ export default function LandingPage() {
 
       {/* Main Content */}
       <div className="max-w-4xl mx-auto px-4 py-8 space-y-8">
-        <div className='flex items-center justify-center gap-3'>
-          <p className='text-[16px] text-gray-800'>sebelum join silahkan cek ig resmi kami</p>
+        <div className='md:flex items-center justify-center gap-3'>
+          <p className='text-[16px] text-gray-800 md:mb-0 mb-3'>sebelum join silahkan cek ig resmi kami</p>
+          <div className='flex justify-center md:none'>
           <Link
             href="https://www.instagram.com/irsyad.jobdesk?igsh=M2llMDU4eDd5cTZ5"
             target="_blank"
@@ -124,6 +125,7 @@ export default function LandingPage() {
           >
             IG Resmi Kami
           </Link>
+          </div>
         </div>
         {/* Success Message */}
         <div className="bg-white rounded-lg shadow-lg p-6">
@@ -460,7 +462,7 @@ tujuan saya membangun agency ini untuk membantu pelajar bisa mandiri mendapatkan
 
           <Link
             href="#"
-            className="inline-block bg-yellow-400 text-black font-extrabold px-10 py-4 rounded-full shadow-lg hover:bg-yellow-300 hover:scale-105 transition"
+            className="md:text-xl text-[14px] inline-block bg-yellow-400 text-black font-extrabold md:px-10 px-4 py-4 rounded-full shadow-lg hover:bg-yellow-300 hover:scale-105 transition"
           >
             🚀 Registrasi Sekarang
           </Link>
