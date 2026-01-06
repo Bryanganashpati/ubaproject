@@ -162,7 +162,7 @@ export default function LandingPage() {
           <div className="bg-gray-200 h-48 rounded-lg overflow-hidden">
             <video
               className="w-full h-full object-cover rounded-lg"
-              src="/video-promo.mp4"
+              src="/video.mp4"
               controls
               autoPlay
               muted
