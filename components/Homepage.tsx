@@ -2,26 +2,23 @@
 
 import React, { useState, useEffect } from 'react';
 import { Gift, Users, Star, CheckCircle, MessageCircle, ChevronLeft, ChevronRight } from 'lucide-react';
+import Link from 'next/link';
+import Image from 'next/image';
 
 export default function LandingPage() {
   const [currentTestimoni, setCurrentTestimoni] = useState(0);
+  const [open, setOpen] = useState(false);
 
   const testimonials = [
     {
-      image: "https://i.pravatar.cc/150?img=12",
+      image: "/images/testi-1.jpeg",
     },
     {
-      image: "https://i.pravatar.cc/150?img=45",
+      image: "/images/testi-2.jpeg",
     },
     {
-      image: "https://i.pravatar.cc/150?img=33",
+      image: "/images/testi-3.jpeg",
     },
-    {
-      image: "https://i.pravatar.cc/150?img=47",
-    },
-    {
-      image: "https://i.pravatar.cc/150?img=68",
-    }
   ];
 
   useEffect(() => {
@@ -39,6 +36,54 @@ export default function LandingPage() {
   const prevTestimoni = () => {
     setCurrentTestimoni((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
+
+  const target = 16956;
+  const [count, setCount] = useState(1);
+
+  useEffect(() => {
+    const duration = 1500; // total durasi animasi (ms)
+    const intervalTime = 20; // kecepatan update
+    const step = Math.ceil(target / (duration / intervalTime));
+
+    const interval = setInterval(() => {
+      setCount(prev => {
+        if (prev + step >= target) {
+          clearInterval(interval);
+          return target;
+        }
+        return prev + step;
+      });
+    }, intervalTime);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const programs = [
+  {
+    title: "Agen Sosmed",
+    desc: "Jual followers, like & komentar",
+    income: "±150K / hari",
+    icon: "📱",
+  },
+  {
+    title: "Agen Freelance",
+    desc: "Balas chat pakai template",
+    income: "±210K / hari",
+    icon: "💬",
+  },
+  {
+    title: "Agen Top-Up Game",
+    desc: "Semua game populer, sistem siap",
+    income: "±180K / hari",
+    icon: "🎮",
+  },
+  {
+    title: "Agen Aplikasi Premium",
+    desc: "Canva, CapCut, Netflix, dll",
+    income: "±325K / hari",
+    icon: "🚀",
+  },
+];
   return (
     <div className="min-h-screen bg-gradient-to-br from-cyan-600 to-teal-500">
       {/* Hero Section */}
@@ -49,24 +94,45 @@ export default function LandingPage() {
               <span className="text-4xl">🦕</span>
             </div>
             <h1 className="text-2xl font-bold mb-2">WELCOME TO</h1>
-            <h2 className="text-3xl font-bold mb-4">@mio.dinohouse</h2>
-            <p className="text-sm opacity-90">Join dan raih kesempatan</p>
-            <p className="text-5xl font-bold mt-4">80.000</p>
+            <h2 className="text-3xl font-bold mb-4">@IrsyadJobdesk</h2>
+            <p className="text-sm opacity-90">Total Member Aktif</p>
+            <p className="text-5xl font-bold mt-4"> {count.toLocaleString("id-ID")}</p>
           </div>
         </div>
       </div>
 
       {/* Main Content */}
       <div className="max-w-4xl mx-auto px-4 py-8 space-y-8">
-        
+        <div className='flex items-center justify-center gap-3'>
+          <p className='text-[16px] text-gray-800'>sebelum join silahkan cek ig resmi kami</p>
+          <Link
+            href="https://www.instagram.com/irsyad.jobdesk?igsh=M2llMDU4eDd5cTZ5"
+            target="_blank"
+            className="
+              p-2 
+              rounded-md 
+              text-white 
+              font-semibold
+              bg-gradient-to-r 
+              from-purple-600 
+              via-pink-500 
+              to-orange-400
+              hover:opacity-90 
+              transition
+              shadow-lg
+            "
+          >
+            IG Resmi Kami
+          </Link>
+        </div>
         {/* Success Message */}
         <div className="bg-white rounded-lg shadow-lg p-6">
           <h3 className="text-xl font-bold text-gray-800 mb-4 text-center">
-            SUKSES DITA ANDA KELOLA LEWAT VIP BISA HASILKAN 500RB-1JUTA/HARI
+            Sukses diusia muda, kerja flexsible hanya melewati hp dan bisa menghasilkan 400-1jt per harinya.
           </h3>
           <p className="text-gray-600 text-sm text-center leading-relaxed">
-            Sebelumnya daftar di bit dinohouse bukan dari kelola bukan dari kita semua kan tinggal nama dari id dan pin nya di tempat lain 
-            pernah daftar juga di tempat lain dan ternyata ga ada hasil malah untung yg ada rugiii..
+            Saya Owner Resmi sekaligus pemilik dari Agency Munjaya Group secara Sah dan Resmi
+tujuan saya membangun agency ini untuk membantu pelajar bisa mandiri mendapatkan hasil dari kerjanya.
           </p>
         </div>
 
@@ -76,32 +142,158 @@ export default function LandingPage() {
             <Users className="w-6 h-6" />
             Join Dan Raih Keuntungan
           </h3>
+          <p className='text-[16px] font-semibold text-teal-600 mb-4'>
+            Keuntungan Nyata Gabung di @irsyad.jobdesk
+          </p>
           <div className="space-y-3 text-gray-700">
             <div className="flex items-start gap-2">
               <CheckCircle className="w-5 h-5 text-teal-500 flex-shrink-0 mt-0.5" />
-              <p className="text-sm">Minimal deposit hanya 10rb aja</p>
+              <p className="text-sm">Potensi Penghasilan 100rb - 1jt/hari</p>
             </div>
             <div className="flex items-start gap-2">
               <CheckCircle className="w-5 h-5 text-teal-500 flex-shrink-0 mt-0.5" />
-              <p className="text-sm">Bonus new member 100%</p>
-            </div>
-            <div className="flex items-start gap-2">
+              <p className="text-sm">Kerja lewat HP tanpa keluar rumah</p>
+            </div><div className="flex items-start gap-2">
               <CheckCircle className="w-5 h-5 text-teal-500 flex-shrink-0 mt-0.5" />
-              <p className="text-sm">Welcome bonus hingga 80.000</p>
-            </div>
-            <div className="flex items-start gap-2">
+              <p className="text-sm">Diajarkan strategi marketing</p>
+            </div><div className="flex items-start gap-2">
               <CheckCircle className="w-5 h-5 text-teal-500 flex-shrink-0 mt-0.5" />
-              <p className="text-sm">Bonus rollingan 0.5%</p>
-            </div>
-            <div className="flex items-start gap-2">
+              <p className="text-sm">Tanpa nunjukin muka</p>
+            </div><div className="flex items-start gap-2">
               <CheckCircle className="w-5 h-5 text-teal-500 flex-shrink-0 mt-0.5" />
-              <p className="text-sm">Bonus cashback hingga 10%</p>
+              <p className="text-sm">Kerja dimanapun dan kapanpun</p>
+            </div><div className="flex items-start gap-2">
+              <CheckCircle className="w-5 h-5 text-teal-500 flex-shrink-0 mt-0.5" />
+              <p className="text-sm">Tanpa minimum Followers sekalipun followers kamu 0</p>
+            </div><div className="flex items-start gap-2">
+              <CheckCircle className="w-5 h-5 text-teal-500 flex-shrink-0 mt-0.5" />
+              <p className="text-sm">Full Bimbingan</p>
+            </div><div className="flex items-start gap-2">
+              <CheckCircle className="w-5 h-5 text-teal-500 flex-shrink-0 mt-0.5" />
+              <p className="text-sm">Bebas konsultasi selamanya</p>
+            </div><div className="flex items-start gap-2">
+              <CheckCircle className="w-5 h-5 text-teal-500 flex-shrink-0 mt-0.5" />
+              <p className="text-sm">Tidak ada target/tuntutan apapun</p>
+            </div><div className="flex items-start gap-2">
+              <CheckCircle className="w-5 h-5 text-teal-500 flex-shrink-0 mt-0.5" />
+              <p className="text-sm">No Ktp/Atm</p>
+            </div><div className="flex items-start gap-2">
+              <CheckCircle className="w-5 h-5 text-teal-500 flex-shrink-0 mt-0.5" />
+              <p className="text-sm">Bisnis anti Riba</p>
+            </div><div className="flex items-start gap-2">
+              <CheckCircle className="w-5 h-5 text-teal-500 flex-shrink-0 mt-0.5" />
+              <p className="text-sm">BISNIS HALAL</p>
             </div>
+            <p className="text-sm">SEMUA PENGHASILAN MENJADI MILIK KAMU SEPENUHNYA TANPA BAGI HASIL KEPADA SIAPAPUN</p>
           </div>
         </div>
 
+        <div className="bg-white rounded-lg shadow-lg p-6">
+          <h3 className="text-xl font-bold text-gray-800 mb-4 text-center">
+            Pengertian Cara Kerja Bisnis
+          </h3>
+          <p className="text-gray-600 text-sm text-left leading-relaxed mb-3">
+            Bisnis ini berherak dibidang digital dan hanya memerlukan handphone dan kuota internet saja, tugasnya hanya membalas customer dan bisa dikerjakan 2/3 jam dalam sehari.
+          </p>
+          <p className="text-gray-600 text-sm text-left leading-relaxed mb-3">
+           Bisnis Ini Cocok Untuk Pemula yang:
+          </p>
+          <ul className='list-disc ml-5 text-gray-600 text-[14px]'>
+            <li>Introvert</li>
+            <li>Belum ada pengalaman</li>
+            <li>Mager hanya dirumah aja.</li>
+            <li>Gaptek</li>
+            <li>Suka Dirumah</li>
+          </ul>
+        </div>
+
+        <section className="text-center max-w-3xl mx-auto">
+        <h1 className="text-xl md:text-xl font-extrabold mb-4">
+          5 Usaha Digital Pelajar & Mahasiswa
+        </h1>
+        <p className="text-[18px] text-white/90">
+          ✨ Program digital tinggal jalan, <b>langsung hasil</b> tanpa ribet.
+        </p>
+      </section>
+
+      {/* Cards */}
+      <section className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mt-12">
+        {programs.map((item, index) => (
+          <div
+            key={index}
+            className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 shadow-xl hover:scale-105 transition"
+          >
+            <div className="text-4xl mb-3">{item.icon}</div>
+            <h3 className="text-xl font-bold mb-1">{item.title}</h3>
+            <p className="text-sm text-white/80 mb-2">{item.desc}</p>
+            <span className="inline-block bg-black/30 px-3 py-1 rounded-full text-sm">
+              {item.income}
+            </span>
+          </div>
+        ))}
+      </section>
+
+      {/* Info */}
+      <section className="max-w-3xl mx-auto text-center mt-12 bg-white/10 p-6 rounded-2xl backdrop-blur">
+        <p className="mb-2">
+          📌 <b>Resmi jadi agen kami</b>
+        </p>
+        <p className="text-sm text-white/90">
+          Semua bahan & template chat sudah disediakan.<br />
+          Tinggal <b>copy–paste & closing</b>.
+        </p>
+      </section>
+
+      {/* Estimasi */}
+      <section className="text-center mt-10">
+        <p className="text-xl font-semibold">
+          💰 Estimasi bersih hingga
+        </p>
+        <h2 className="text-3xl font-extrabold text-yellow-300">
+          5 Juta / Bulan
+        </h2>
+        <p className="text-sm text-white/80">(±200K / hari)</p>
+      </section>
+
+      {/* CTA */}
+      <section className="text-center mt-12">
+        <button
+        onClick={() => setOpen(true)}
+        className="bg-yellow-400 text-black font-bold px-8 py-4 rounded-full shadow-lg hover:bg-yellow-300 transition"
+      >
+        📄 Lihat Surat Izin Usaha Resmi
+      </button>
+
+      {/* Modal */}
+      {open && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70">
+          
+          {/* Modal Content */}
+          <div className="relative bg-white rounded-xl p-4 max-w-[400px] w-full mx-4">
+            
+            {/* Close Button */}
+            <button
+              onClick={() => setOpen(false)}
+              className="absolute -top-3 -right-3 bg-red-500 text-white w-8 h-8 rounded-full font-bold"
+            >
+              ✕
+            </button>
+
+            {/* Image */}
+            <Image
+              src="/images/surat-legal.jpeg" // simpan di folder public
+              alt="Surat Izin Usaha Resmi"
+              width={400}
+              height={400}
+              className="rounded-lg"
+            />
+          </div>
+        </div>
+        )}
+      </section>
+
         {/* Hot Promo */}
-        <div className="bg-gradient-to-r from-orange-500 to-red-500 rounded-lg shadow-lg p-6 text-white">
+        {/* <div className="bg-gradient-to-r from-orange-500 to-red-500 rounded-lg shadow-lg p-6 text-white">
           <div className="flex items-center justify-center gap-2 mb-3">
             <Gift className="w-6 h-6" />
             <h3 className="text-xl font-bold">Promo Jolo Hot Hot 🔥</h3>
@@ -111,10 +303,10 @@ export default function LandingPage() {
             <p className="text-center text-sm">Deposit Via Dana All Nominal (E-wallet Lainnya)</p>
           </div>
           <p className="text-center text-sm font-bold">Promo Spesial Berakhir Dalam:</p>
-        </div>
+        </div> */}
 
         {/* Special Event */}
-        <div className="bg-white rounded-lg shadow-lg p-6 text-center">
+        {/* <div className="bg-white rounded-lg shadow-lg p-6 text-center">
           <div className="text-red-600 font-bold text-2xl mb-2">
             🎁 Bagi 23 jam 59 menit 9 detik
           </div>
@@ -130,10 +322,10 @@ export default function LandingPage() {
             <p>📍 18.00-20.00 wib = cuan pasti 100%</p>
             <p>📍 21.00-23.00 wib = cuan pasti 100%</p>
           </div>
-        </div>
+        </div> */}
 
         {/* Event Cuan */}
-        <div className="bg-white rounded-lg shadow-lg p-6">
+        {/* <div className="bg-white rounded-lg shadow-lg p-6">
           <h3 className="text-xl font-bold text-teal-600 mb-4 text-center">EVENT CUAN BOSKU!</h3>
           <div className="space-y-3 text-sm text-gray-700">
             <div className="bg-teal-50 p-3 rounded">
@@ -146,23 +338,23 @@ export default function LandingPage() {
               <p className="font-semibold">🎯 Deposit 100.000 = BONUS 500.000</p>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Kata Motivasi */}
-        <div className="bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg shadow-lg p-6 text-white text-center">
+        {/* <div className="bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg shadow-lg p-6 text-white text-center">
           <h3 className="text-2xl font-bold mb-3">Kata Motivasi</h3>
           <p className="text-lg italic">"Kesempatan tidak datang dua kali, ambil sekarang juga!"</p>
-        </div>
+        </div> */}
 
         {/* Video Section */}
         <div className="bg-white rounded-lg shadow-lg p-6">
           <h3 className="text-xl font-bold text-teal-600 mb-4 text-center">
-            🎬 Video Strujuk Tradisional Full Imkitolungo
+            🎬 Video Singkat Testimoni Full Bimbingan
           </h3>
-          <div className="bg-gray-200 h-48 rounded-lg overflow-hidden">
+          <div className="bg-gray-200 h-[500px] rounded-lg overflow-hidden">
             <video
-              className="w-full h-full object-cover rounded-lg"
-              src="/video.mp4"
+              className="w-full h-full rounded-lg"
+              src="/images/video-testimoni.mp4"
               controls
               autoPlay
               muted
@@ -184,7 +376,7 @@ export default function LandingPage() {
                 <img 
                   src={testimonials[currentTestimoni].image} 
                   alt={testimonials[currentTestimoni].image}
-                  className="w-24 h-24 rounded-full object-cover"
+                  className="w-[500px] h-full object-cover"
                 />
               </div>
             </div>
@@ -229,8 +421,162 @@ export default function LandingPage() {
           </div>
         </div>
 
+        <div className="relative bg-gradient-to-br from-red-500 via-pink-500 to-orange-400 text-white rounded-3xl p-8 shadow-2xl overflow-hidden">
+        
+        {/* Badge */}
+        <span className="absolute top-4 right-4 bg-black/30 px-4 py-1 rounded-full text-sm font-bold">
+          ⏰ Promo 24 Jam
+        </span>
+
+        {/* Title */}
+        <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
+          Mulai Freelance Di Sini
+        </h2>
+
+        {/* Harga */}
+        <div className="mb-4">
+          <p className="text-lg line-through opacity-80">
+            400.000 IDR
+          </p>
+          <p className="text-4xl font-extrabold text-yellow-300">
+            24.500 IDR
+          </p>
+          <p className="text-sm opacity-90">
+            Khusus berlaku 24 jam
+          </p>
+        </div>
+
+        {/* Description */}
+        <p className="mb-6 text-white/90">
+          Kesempatan terbatas untuk pelajar & mahasiswa.
+          Sistem sudah siap, tinggal jalan & langsung hasil.
+        </p>
+
+        {/* CTA */}
+        <div className="text-center">
+          <p className="font-bold mb-3">
+            CARA JOIN HANYA 👇🏻👇🏻👇🏻
+          </p>
+
+          <Link
+            href="#"
+            className="inline-block bg-yellow-400 text-black font-extrabold px-10 py-4 rounded-full shadow-lg hover:bg-yellow-300 hover:scale-105 transition"
+          >
+            🚀 Registrasi Sekarang
+          </Link>
+
+          <p className="text-sm mt-3 opacity-90">
+            Lakukan registrasi sekarang sebelum terlambat!
+          </p>
+        </div>
+      </div>
+
+      <div className="
+    bg-gradient-to-br 
+    from-white 
+    via-purple-50 
+    to-pink-50
+    text-gray-800 
+    rounded-3xl 
+    p-8 
+    shadow-xl
+    border
+  ">
+        
+        {/* Header */}
+        <h2 className="text-3xl md:text-4xl font-extrabold mb-4 text-center">
+          🎯 Setelah Join Kamu Akan Mendapatkan
+        </h2>
+
+        <p className="text-center text-gray-700 mb-6">
+          5 bisnis digital yang bisa kamu pegang & kelola sendiri  
+          <br />✨ <b>Mulai hari ini juga</b>
+        </p>
+
+        {/* Harga */}
+        <div className="
+  bg-gradient-to-r 
+  from-yellow-100 
+  to-orange-100 
+  rounded-2xl 
+  p-6 
+  text-center 
+  mb-8
+">
+          <p className="text-sm opacity-80 mb-1">Promo Terbatas</p>
+          <h3 className="text-4xl font-extrabold text-yellow-300">
+            24.500 IDR
+          </h3>
+          <p className="text-sm opacity-90">KHUSUS 24 JAM</p>
+        </div>
+
+        {/* Payment List */}
+        <div className="grid md:grid-cols-2 gap-6">
+          
+          {/* E-Wallet */}
+          <div className="bg-white rounded-2xl p-5 shadow-md border">
+            <h4 className="font-bold text-lg mb-3">📱 E-Wallet</h4>
+            <ul className="space-y-2 text-sm">
+              <li>💙 DANA: <b>08979626451</b> <br /> a.n <b>MUH ZAH</b></li>
+              <li>💚 GOPAY: <b>083879947983</b> <br /> a.n <b>MUN</b></li>
+              <li>🟣 OVO: <b>083879947983</b> <br /> a.n <b>MUN</b></li>
+              <li>🟠 SHOPEEPAY: <b>083879947983</b> <br /> a.n <b>M. IR</b></li>
+            </ul>
+          </div>
+
+          {/* Bank */}
+         <div className="bg-white rounded-2xl p-5 shadow-md border">
+            <h4 className="font-bold text-lg mb-3">🏦 Transfer Bank</h4>
+            <ul className="space-y-3 text-sm">
+              <li>
+                <b>SeaBank</b><br />
+                901567111337
+                a.n <b>M. Irsyad Thuba</b>
+              </li>
+              <li>
+                <b>BRI</b><br />
+                602601039590533<br />
+                a.n <b>M. Irsyad Thuba</b>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Instruction */}
+        <div className="mt-8 bg-black/30 rounded-2xl p-6 text-center">
+          <p className="font-semibold mb-3">
+            📸 Setelah Transfer
+          </p>
+          <p className="text-sm text-white/90 mb-4">
+            Kirim bukti transfer & lakukan konfirmasi  
+            melalui WhatsApp Admin
+          </p>
+
+          <Link
+            href="https://wa.me/628XXXXXXXXXX"
+            target="_blank"
+            className="
+  inline-block 
+  bg-green-500 
+  text-white 
+  font-extrabold 
+  px-10 
+  py-4 
+  rounded-full 
+  shadow-md 
+  hover:bg-green-600 
+  hover:scale-105 
+  transition
+"
+          >
+            💬 Konfirmasi via WhatsApp
+          </Link>
+        </div>
+
+      </div>
+
         {/* Alasan Join */}
-        <div className="bg-white rounded-lg shadow-lg p-6">
+        {/* <div className="bg-white rounded-lg shadow-lg p-6">
           <h3 className="text-xl font-bold text-teal-600 mb-4 text-center">Alasan Join</h3>
           <div className="grid grid-cols-2 gap-4 text-center">
             <div className="bg-teal-50 p-4 rounded-lg">
@@ -250,10 +596,10 @@ export default function LandingPage() {
               <p className="text-sm font-semibold text-gray-700">Event Menarik</p>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Cara Join */}
-        <div className="bg-white rounded-lg shadow-lg p-6">
+        {/* <div className="bg-white rounded-lg shadow-lg p-6">
           <h3 className="text-xl font-bold text-teal-600 mb-4 text-center">Cara Join</h3>
           <div className="space-y-3">
             <div className="flex items-start gap-3">
@@ -273,24 +619,24 @@ export default function LandingPage() {
               <p className="text-sm text-gray-700">Mulai main dan raih cuan!</p>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Siap-siap Untung */}
-        <div className="bg-gradient-to-r from-green-500 to-emerald-500 rounded-lg shadow-lg p-6 text-white text-center">
+        {/* <div className="bg-gradient-to-r from-green-500 to-emerald-500 rounded-lg shadow-lg p-6 text-white text-center">
           <h3 className="text-2xl font-bold mb-3">Siap-siap Untung?</h3>
           <p className="mb-4">Jangan sampai kelewatan promo spesial hari ini!</p>
-        </div>
+        </div> */}
 
         {/* Cek Script Lengkap */}
-        <div className="bg-white rounded-lg shadow-lg p-6 text-center">
+        {/* <div className="bg-white rounded-lg shadow-lg p-6 text-center">
           <h3 className="text-xl font-bold text-gray-800 mb-3">Cek Script Lengkap</h3>
           <p className="text-sm text-gray-600 mb-4">
             Dapatkan panduan lengkap dan tips sukses dari para member yang sudah berhasil
           </p>
-        </div>
+        </div> */}
 
         {/* WA.me Section */}
-        <div className="bg-white rounded-lg shadow-lg p-6">
+        {/* <div className="bg-white rounded-lg shadow-lg p-6">
           <h3 className="text-xl font-bold text-teal-600 mb-4 text-center">WA.ME DIPERMUDAH KAN !</h3>
           <div className="space-y-2 text-sm text-gray-700">
             <p>✅ Sudah ada nomor</p>
@@ -300,10 +646,10 @@ export default function LandingPage() {
             <p>✅ CS akan balas</p>
             <p>✅ Dan WD</p>
           </div>
-        </div>
+        </div> */}
 
         {/* FAQ */}
-        <div className="bg-white rounded-lg shadow-lg p-6">
+        {/* <div className="bg-white rounded-lg shadow-lg p-6">
           <h3 className="text-xl font-bold text-teal-600 mb-4 text-center">
             FAQ - Pertanyaan yang Sering Ditujukan
           </h3>
@@ -321,10 +667,10 @@ export default function LandingPage() {
               <p className="text-sm text-gray-600">100% aman dan terpercaya dengan ribuan member aktif</p>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Bagi Dahulu */}
-        <div className="bg-gradient-to-r from-blue-500 to-indigo-500 rounded-lg shadow-lg p-6 text-white text-center">
+        {/* <div className="bg-gradient-to-r from-blue-500 to-indigo-500 rounded-lg shadow-lg p-6 text-white text-center">
           <h3 className="text-xl font-bold mb-3">🎁 Bagi Dahulu dan Mulai Bisnis Kaliannya?</h3>
           <p className="text-sm mb-4">
             Kalian dapat dari saya tentunya GRATIS dan 100% kan uangnya sudah saya modalin untuk kalian!
@@ -334,10 +680,10 @@ export default function LandingPage() {
             Jadi JANGAN DI SIA SIA KAN KESEMPATAN INI! Karena ga semua orang bisa dapat & hanya di 
             account mio.dinohouse ajaa yg bagi secara GRATIS!
           </p>
-        </div>
+        </div> */}
 
         {/* CTA Buttons */}
-        <div className="space-y-4 pb-8">
+        {/* <div className="space-y-4 pb-8">
           <button className="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-6 rounded-lg shadow-lg transition duration-300 flex items-center justify-center gap-2">
             <MessageCircle className="w-6 h-6" />
             DAFTAR SEKARANG VIA WHATSAPP
@@ -345,13 +691,13 @@ export default function LandingPage() {
           <button className="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-4 px-6 rounded-lg shadow-lg transition duration-300">
             KLAIM BONUS 80.000
           </button>
-        </div>
+        </div> */}
 
       </div>
 
       {/* Footer */}
       <div className="bg-gray-800 text-white py-6 px-4 text-center text-sm">
-        <p>&copy; 2024 Mio Dinohouse. All rights reserved.</p>
+        <p>&copy; 2026 @IrsyadJobdesk. All rights reserved.</p>
         <p className="mt-2 text-gray-400">Bermain dengan bijak dan bertanggung jawab</p>
       </div>
     </div>
