@@ -66,7 +66,7 @@ export default function LandingPage() {
           </h3>
           <p className="text-gray-600 text-sm text-center leading-relaxed">
             Sebelumnya daftar di bit dinohouse bukan dari kelola bukan dari kita semua kan tinggal nama dari id dan pin nya di tempat lain 
-            pernah daftar juga di tempat lain dan ternyata ga ada hasil malah untung yg ada rugiii...
+            pernah daftar juga di tempat lain dan ternyata ga ada hasil malah untung yg ada rugiii..
           </p>
         </div>
 
