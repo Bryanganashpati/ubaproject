@@ -79,7 +79,7 @@ export default function LandingPage() {
     },
     {
       title: "Agen Aplikasi Premium",
-      desc: "Canva, CapCut, Netflix, dll",
+      desc: "Hanya balas chat via whastapp jual Canva, Capcut, Netflix dll",
       income: "±325K / hari",
       icon: "🚀",
     },
