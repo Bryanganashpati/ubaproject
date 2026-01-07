@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { Gift, Users, Star, CheckCircle, MessageCircle, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Gift, Users, Star, CheckCircle, ChevronLeft, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -59,31 +59,38 @@ export default function LandingPage() {
   }, []);
 
   const programs = [
-  {
-    title: "Agen Sosmed",
-    desc: "Jual followers, like & komentar",
-    income: "±150K / hari",
-    icon: "📱",
-  },
-  {
-    title: "Agen Freelance",
-    desc: "Balas chat pakai template",
-    income: "±210K / hari",
-    icon: "💬",
-  },
-  {
-    title: "Agen Top-Up Game",
-    desc: "Semua game populer, sistem siap",
-    income: "±180K / hari",
-    icon: "🎮",
-  },
-  {
-    title: "Agen Aplikasi Premium",
-    desc: "Canva, CapCut, Netflix, dll",
-    income: "±325K / hari",
-    icon: "🚀",
-  },
-];
+    {
+      title: "Agen Sosmed",
+      desc: "Jual followers, like & komentar",
+      income: "±150K / hari",
+      icon: "📱",
+    },
+    {
+      title: "Agen Freelance",
+      desc: "Cukup balas chat pakai template",
+      income: "±210K / hari",
+      icon: "💬",
+    },
+    {
+      title: "Agen Top-Up Game",
+      desc: "Jualan top up game populer, sistem disediakan",
+      income: "±180K / hari",
+      icon: "🎮",
+    },
+    {
+      title: "Agen Aplikasi Premium",
+      desc: "Canva, CapCut, Netflix, dll",
+      income: "±325K / hari",
+      icon: "🚀",
+    },
+    {
+      title: "Agen Produk Digital",
+      desc: "Hanya balas chat via WhatsApp, tanpa modal",
+      income: "±257K / hari",
+      icon: "💼",
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-cyan-600 to-teal-500">
       {/* Hero Section */}
@@ -104,7 +111,7 @@ export default function LandingPage() {
       {/* Main Content */}
       <div className="max-w-4xl mx-auto px-4 py-8 space-y-8">
         <div className='md:flex items-center justify-center gap-3'>
-          <p className='text-[16px] text-gray-800 md:mb-0 mb-3'>sebelum join silahkan cek ig resmi kami</p>
+          <p className='text-[16px] text-gray-800 md:text-left text-center md:mb-0 mb-3'>sebelum join silahkan cek ig resmi kami</p>
           <div className='flex justify-center md:none'>
           <Link
             href="https://www.instagram.com/irsyad.jobdesk?igsh=M2llMDU4eDd5cTZ5"
@@ -195,7 +202,7 @@ tujuan saya membangun agency ini untuk membantu pelajar bisa mandiri mendapatkan
             Pengertian Cara Kerja Bisnis
           </h3>
           <p className="text-gray-600 text-sm text-left leading-relaxed mb-3">
-            Bisnis ini berherak dibidang digital dan hanya memerlukan handphone dan kuota internet saja, tugasnya hanya membalas customer dan bisa dikerjakan 2/3 jam dalam sehari.
+            Bisnis ini bergerak dibidang digital dan hanya memerlukan handphone dan kuota internet saja, tugasnya hanya membalas customer dan bisa dikerjakan 2/3 jam dalam sehari.
           </p>
           <p className="text-gray-600 text-sm text-left leading-relaxed mb-3">
            Bisnis Ini Cocok Untuk Pemula yang:
@@ -209,90 +216,76 @@ tujuan saya membangun agency ini untuk membantu pelajar bisa mandiri mendapatkan
           </ul>
         </div>
 
+        <section className="max-w-3xl mx-auto text-center mb-10 bg-white/10 p-6 rounded-2xl backdrop-blur">
+          <p className="mb-2 font-bold text-lg">
+            🔰 Resmi jadi agen kami
+          </p>
+          <p className="text-sm text-white/90">
+            Semua bahan & template chat sudah disediakan.<br />
+            Kamu tinggal <b>copy–paste & digaji</b>.
+          </p>
+        </section>
+
         <section className="text-center max-w-3xl mx-auto">
-        <h1 className="text-xl md:text-xl font-extrabold mb-4">
-          5 Usaha Digital Pelajar & Mahasiswa
-        </h1>
-        <p className="text-[18px] text-white/90">
-          ✨ Program digital tinggal jalan, <b>langsung hasil</b> tanpa ribet.
-        </p>
-      </section>
+          <h1 className="text-xl md:text-2xl font-extrabold mb-3">
+            5 Usaha Digital Pelajar & Mahasiswa
+          </h1>
+          <p className="md:text-[18px] text-[16px] text-white/90">
+            ✨ <b>5 Program Digital</b> – Tinggal Jalan, Langsung Hasil!
+          </p>
+        </section>
 
-      {/* Cards */}
-      <section className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mt-12">
-        {programs.map((item, index) => (
-          <div
-            key={index}
-            className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 shadow-xl hover:scale-105 transition"
-          >
-            <div className="text-4xl mb-3">{item.icon}</div>
-            <h3 className="text-xl font-bold mb-1">{item.title}</h3>
-            <p className="text-sm text-white/80 mb-2">{item.desc}</p>
-            <span className="inline-block bg-black/30 px-3 py-1 rounded-full text-sm">
-              {item.income}
-            </span>
-          </div>
-        ))}
-      </section>
-
-      {/* Info */}
-      <section className="max-w-3xl mx-auto text-center mt-12 bg-white/10 p-6 rounded-2xl backdrop-blur">
-        <p className="mb-2">
-          📌 <b>Resmi jadi agen kami</b>
-        </p>
-        <p className="text-sm text-white/90">
-          Semua bahan & template chat sudah disediakan.<br />
-          Tinggal <b>copy–paste & closing</b>.
-        </p>
-      </section>
-
-      {/* Estimasi */}
-      <section className="text-center mt-10">
-        <p className="text-xl font-semibold">
-          💰 Estimasi bersih hingga
-        </p>
-        <h2 className="text-3xl font-extrabold text-yellow-300">
-          5 Juta / Bulan
-        </h2>
-        <p className="text-sm text-white/80">(±200K / hari)</p>
-      </section>
-
-      {/* CTA */}
-      <section className="text-center mt-12">
-        <button
-        onClick={() => setOpen(true)}
-        className="bg-yellow-400 text-black font-bold px-8 py-4 rounded-full shadow-lg hover:bg-yellow-300 transition"
-      >
-        📄 Lihat Surat Izin Usaha Resmi
-      </button>
-
-      {/* Modal */}
-      {open && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70">
-          
-          {/* Modal Content */}
-          <div className="relative bg-white rounded-xl p-4 max-w-[400px] w-full mx-4">
-            
-            {/* Close Button */}
-            <button
-              onClick={() => setOpen(false)}
-              className="absolute -top-3 -right-3 bg-red-500 text-white w-8 h-8 rounded-full font-bold"
+        <section className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mt-12">
+          {programs.map((item, index) => (
+            <div
+              key={index}
+              className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 shadow-xl hover:scale-105 transition"
             >
-              ✕
-            </button>
+              <div className="text-4xl mb-3">{item.icon}</div>
+              <h3 className="text-xl font-bold mb-1">{item.title}</h3>
+              <p className="text-sm text-white/80 mb-2">{item.desc}</p>
+              <span className="inline-block bg-black/30 px-3 py-1 rounded-full text-sm">
+                Hasil {item.income}
+              </span>
+            </div>
+          ))}
+        </section>
 
-            {/* Image */}
+        <section className="max-w-3xl mx-auto text-center mt-12 bg-white/10 p-6 rounded-2xl backdrop-blur">
+          <p className="font-bold mb-2">📌 Cara Kerja Bisnis</p>
+          <p className="text-sm text-white/90">
+            Anda hanya perlu membalas chat customer dan hanya membutuhkan
+            aplikasi <b>WhatsApp</b> saja.<br />
+            Maka fee (<b>gaji</b>) akan diterima <b>setiap sore</b>.
+          </p>
+        </section>
+
+        <section className="text-center mt-10">
+          <p className="text-xl font-semibold">
+            💰 Estimasi bersih hingga
+          </p>
+          <h2 className="text-3xl font-extrabold text-yellow-300">
+            5 Juta / Bulan
+          </h2>
+          <p className="text-sm text-white/80">(±200K / hari)</p>
+        </section>
+
+        <section className="text-center mt-12">
+          <p className="text-xl font-bold mb-4">
+            📄 Surat Izin Usaha Resmi Dari Owner Ada Disini
+          </p>
+
+          <div className="flex justify-center">
             <Image
-              src="/images/surat-legal.jpeg" // simpan di folder public
+              src="/images/surat-legal.jpeg" // simpan di folder public/images
               alt="Surat Izin Usaha Resmi"
               width={400}
               height={400}
-              className="rounded-lg"
+              className="rounded-xl shadow-xl"
             />
           </div>
-        </div>
-        )}
-      </section>
+        </section>
+
 
         {/* Hot Promo */}
         {/* <div className="bg-gradient-to-r from-orange-500 to-red-500 rounded-lg shadow-lg p-6 text-white">
@@ -474,16 +467,16 @@ tujuan saya membangun agency ini untuk membantu pelajar bisa mandiri mendapatkan
       </div>
 
       <div className="
-    bg-gradient-to-br 
-    from-white 
-    via-purple-50 
-    to-pink-50
-    text-gray-800 
-    rounded-3xl 
-    p-8 
-    shadow-xl
-    border
-  ">
+          bg-gradient-to-br 
+          from-white 
+          via-purple-50 
+          to-pink-50
+          text-gray-800 
+          rounded-3xl 
+          p-8 
+          shadow-xl
+          border
+        ">
         
         {/* Header */}
         <h2 className="text-3xl md:text-4xl font-extrabold mb-4 text-center">
@@ -497,16 +490,16 @@ tujuan saya membangun agency ini untuk membantu pelajar bisa mandiri mendapatkan
 
         {/* Harga */}
         <div className="
-  bg-gradient-to-r 
-  from-yellow-100 
-  to-orange-100 
-  rounded-2xl 
-  p-6 
-  text-center 
-  mb-8
-">
+          bg-gradient-to-r 
+          from-yellow-100 
+          to-orange-100 
+          rounded-2xl 
+          p-6 
+          text-center 
+          mb-8
+        ">
           <p className="text-sm opacity-80 mb-1">Promo Terbatas</p>
-          <h3 className="text-4xl font-extrabold text-yellow-300">
+          <h3 className="md:text-4xl text-3xl font-extrabold text-yellow-300">
             24.500 IDR
           </h3>
           <p className="text-sm opacity-90">KHUSUS 24 JAM</p>
@@ -516,15 +509,48 @@ tujuan saya membangun agency ini untuk membantu pelajar bisa mandiri mendapatkan
         <div className="grid md:grid-cols-2 gap-6">
           
           {/* E-Wallet */}
-          <div className="bg-white rounded-2xl p-5 shadow-md border">
-            <h4 className="font-bold text-lg mb-3">📱 E-Wallet</h4>
-            <ul className="space-y-2 text-sm">
-              <li>💙 DANA: <b>08979626451</b> <br /> a.n <b>MUH ZAH</b></li>
-              <li>💚 GOPAY: <b>083879947983</b> <br /> a.n <b>MUN</b></li>
-              <li>🟣 OVO: <b>083879947983</b> <br /> a.n <b>MUN</b></li>
-              <li>🟠 SHOPEEPAY: <b>083879947983</b> <br /> a.n <b>M. IR</b></li>
-            </ul>
-          </div>
+          {/* E-Wallet */}
+<div className="bg-white rounded-2xl p-5 shadow-md border">
+  <h4 className="font-bold text-lg mb-4 flex items-center gap-2">
+    📱 E-Wallet
+  </h4>
+
+
+  {/* List E-Wallet */}
+  <ul className="space-y-2 text-sm mb-4">
+    <li>
+      💙 DANA: <b>08979626451</b><br />
+      a.n <b>MUH ZAH</b>
+    </li>
+    <li>
+      💚 GOPAY: <b>083879947983</b><br />
+      a.n <b>MUN</b>
+    </li>
+    <li>
+      🟣 OVO: <b>083879947983</b><br />
+      a.n <b>MUN</b>
+    </li>
+    <li>
+      🟠 SHOPEEPAY: <b>083879947983</b><br />
+      a.n <b>M. IR</b>
+    </li>
+  </ul>
+  {/* QRIS Image */}
+  <div className="flex justify-center mb-4">
+    <Image
+      src="/images/qris.jpeg" // simpan di public/images
+      alt="QRIS Pembayaran"
+      width={220}
+      height={220}
+      className="rounded-xl border shadow-sm"
+    />
+  </div>
+
+  <p className="text-xs text-center text-gray-500">
+    Scan QRIS untuk semua E-Wallet
+  </p>
+</div>
+
 
           {/* Bank */}
          <div className="bg-white rounded-2xl p-5 shadow-md border">
@@ -558,18 +584,20 @@ tujuan saya membangun agency ini untuk membantu pelajar bisa mandiri mendapatkan
             href="https://wa.me/628XXXXXXXXXX"
             target="_blank"
             className="
-  inline-block 
-  bg-green-500 
-  text-white 
-  font-extrabold 
-  px-10 
-  py-4 
-  rounded-full 
-  shadow-md 
-  hover:bg-green-600 
-  hover:scale-105 
-  transition
-"
+              inline-block 
+              bg-green-500 
+              text-white 
+              font-extrabold 
+              px-10 
+              py-4 
+              rounded-full 
+              shadow-md 
+              hover:bg-green-600 
+              hover:scale-105 
+              transition
+              md:text-[18px]
+              text-[16px]
+            "
           >
             💬 Konfirmasi via WhatsApp
           </Link>
