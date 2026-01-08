@@ -256,6 +256,9 @@ tujuan saya membangun agency ini untuk membantu pelajar bisa mandiri mendapatkan
           <p className="text-sm text-white/90">
             Anda hanya perlu membalas chat customer dan hanya membutuhkan
             aplikasi <b>WhatsApp</b> saja.<br />
+            materi yang akan dikirim untuk balas chat adalah tentang product digital,
+            kalian nanti ngebalas chatnya make template yang sudah di sediakan jadi tinggal
+            salin tempel aja dan terima beres. <br />
             Maka fee (<b>gaji</b>) akan diterima <b>setiap sore</b>.
           </p>
         </section>
@@ -454,7 +457,7 @@ tujuan saya membangun agency ini untuk membantu pelajar bisa mandiri mendapatkan
           </p>
 
           <Link
-            href="#"
+            href="#registrasi"
             className="md:text-xl text-[14px] inline-block bg-yellow-400 text-black font-extrabold md:px-10 px-4 py-4 rounded-full shadow-lg hover:bg-yellow-300 hover:scale-105 transition"
           >
             🚀 Registrasi Sekarang
@@ -498,8 +501,8 @@ tujuan saya membangun agency ini untuk membantu pelajar bisa mandiri mendapatkan
           text-center 
           mb-8
         ">
-          <p className="text-sm opacity-80 mb-1">Promo Terbatas</p>
-          <h3 className="md:text-4xl text-3xl font-extrabold text-yellow-300">
+          <p className="text-sm opacity-90 mb-1">Promo Terbatas</p>
+          <h3 id='registrasi' className="md:text-4xl text-3xl font-extrabold text-red-600">
             24.500 IDR
           </h3>
           <p className="text-sm opacity-90">KHUSUS 24 JAM</p>
@@ -581,7 +584,7 @@ tujuan saya membangun agency ini untuk membantu pelajar bisa mandiri mendapatkan
           </p>
 
           <Link
-            href="https://wa.me/628XXXXXXXXXX"
+            href="https://wa.link/4ae0on"
             target="_blank"
             className="
               inline-block 
@@ -589,7 +592,8 @@ tujuan saya membangun agency ini untuk membantu pelajar bisa mandiri mendapatkan
               text-white 
               font-extrabold 
               px-10 
-              py-4 
+              md:py-4 
+              py-2
               rounded-full 
               shadow-md 
               hover:bg-green-600 
