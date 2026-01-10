@@ -584,7 +584,7 @@ tujuan saya membangun agency ini untuk membantu pelajar bisa mandiri mendapatkan
           </p>
 
           <Link
-            href="https://wa.link/4ae0on"
+            href="https://www.instagram.com/irsyad.jobdesk?igsh=MW01NTF6bTdqOGY4eg%3D%3D&utm_source=qr"
             target="_blank"
             className="
               inline-block 
